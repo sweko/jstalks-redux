@@ -12,6 +12,10 @@ export class ShowNumberComponent implements OnInit {
 
   constructor(private stateService: StateService) {
     this.value = this.stateService.getState().value;
+
+    this.stateService.register(() => {
+      this.value = this.stateService.getState().value;
+    });
   }
   ngOnInit() {
   }

@@ -20,6 +20,7 @@ export class SubtractButtonComponent implements OnInit {
   subtract() {
     this.stateService.getState().value -= 1;
     this.value = this.stateService.getState().value;
+    this.stateService.notifyListeners();
   }
 
 }
