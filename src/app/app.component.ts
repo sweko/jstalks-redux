@@ -7,12 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  value: number;
+  appValue: number = 10;
 
-  title = 'My #Tarabica18 app';
+  title = "My JS Talks '18 app";
 
   valueChanged(value) {
-    this.value = value;
+    this.appValue = value;
   }
 
 }
