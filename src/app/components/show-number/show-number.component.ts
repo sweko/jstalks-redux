@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { StateService } from 'src/app/services/state-service';
 
 @Component({
   selector: 'show-number',
@@ -7,11 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShowNumberComponent implements OnInit {
 
-  @Input() value: number;
+  value: number;
 
-  constructor() { }
-
+  constructor(private stateService: StateService) {
+    this.value = this.stateService.getState().value;
+  }
   ngOnInit() {
+  }
+
+  refresh() {
+    this.value = this.stateService.getState().value;
   }
 
 }
