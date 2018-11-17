@@ -8,19 +8,14 @@ import { StateService } from 'src/app/services/state-service';
 })
 export class AddButtonComponent implements OnInit {
 
-  value: number;
-
   constructor(private stateService: StateService) {
-    this.value = this.stateService.getState().value;
   }
 
   ngOnInit() {
   }
 
   add() {
-    this.stateService.getState().value += 1;
-    this.value = this.stateService.getState().value;
-    this.stateService.notifyListeners();
+    this.stateService.doSomething("IncrementValue");
   }
 
 }

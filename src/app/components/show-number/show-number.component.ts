@@ -20,8 +20,4 @@ export class ShowNumberComponent implements OnInit {
   ngOnInit() {
   }
 
-  refresh() {
-    this.value = this.stateService.getState().value;
-  }
-
 }
